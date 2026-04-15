@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inventario de productos dermatológicos disponibles en FH Dermatología.">
+  <title>FH Dermatología | Inventario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="whatsapp.js" defer></script>
+</head>
+
+<script src="cart-float.js" defer></script>
+
+<body>
+  <header>
+   <div class="top-brand">
+    <a href="index.html" class="brand">
+      <img src="img/consultorio.jpg" alt="FH Dermatología" class="brand-img">
+      
+    </a>
+   </div>
+
+   <nav class="main-nav" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="quienes.html">Nosotros</a>
+    <a href="inventario.html">Inventario</a>
+    <a href="sobre.html">Sobre nosotros</a>
+    <a href="contacto.html">Contacto</a>
+   </nav>
+  </header>
+
+  <main>
+  <section class="page-section">
+    <h1>Inventario</h1>
+    <p>Explora productos dermatologicos por categoria y precio.</p>
+
+    <div class="filters-panel">
+     <div class="search-wrap">
+    <input id="search" type="text" placeholder="Buscar por nombre o descripcion..." />
+     </div>
+
+    <div id="categoryChips" class="chips"></div>
+
+    <div class="sort-wrap">
+      <label for="sort">Ordenar:</label>
+      <select id="sort">
+        <option value="default">Relevancia</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+        <option value="stock-desc">Stock: mayor a menor</option>
+      </select>
+     </div>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+    <section class="cart-panel" aria-live="polite">
+      <div class="cart-head">
+        <h2>Carrito</h2>
+        <button id="clearCartBtn" type="button" class="chip">Limpiar</button>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <p class="cart-empty">Aun no hay productos en el carrito.</p>
+      </div>
+      <div class="cart-total">
+        <strong>Total:</strong>
+        <span id="cartTotal">$0</span>
+      </div>
+      <button id="sendCartBtn" type="button" class="btn cart-send-btn">Enviar pedido por WhatsApp</button>
+    </section>
+  </section>
+</main>
+
+
+  <footer>
+    <h3>Política de privacidad</h3>
+    <p>Protegemos la información de nuestros pacientes conforme a normativas de salud y privacidad.</p>
+  </footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="product.js" defer></script> <!-- productos -->
+</html>
