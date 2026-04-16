@@ -70,7 +70,7 @@ function sanitizeImageUrl(value) {
 
 function singleProductWhatsappLink(product) {
   const msg = `Hola, quiero informacion de ${product.name} por ${formatCOP(product.price)}.`;
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+  return `https://wa.me/${telefono}?text=${encodeURIComponent(msg)}`;
 }
 
 function productCard(product) {
@@ -230,7 +230,7 @@ function sendCartToWhatsApp() {
     `Total: ${formatCOP(cartTotal())}`
   ].join("\n");
 
-  const link = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
+  const link = `https://wa.me/${telefono}?text=${encodeURIComponent(message)}`;
   window.open(link, "_blank", "noopener,noreferrer");
 }
 
@@ -292,7 +292,7 @@ async function loadProductsFromSheets() {
         const product = PRODUCTS.find((p) => p.id === item.id);
         return { ...item, stock: product.stock, qty: Math.min(item.qty, product.stock) };
       })
-      .filter((p, index, arr) => p.id && arr.findIndex(x => x.id === p.id) === index)
+      .filter((p, index, arr) => p.id && arr.findIndex(x => x.id === p.id) === index);
 
     saveCart();
     const urlCategory = getInitialCategoryFromUrl();

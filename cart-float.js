@@ -47,7 +47,7 @@
       `Total: ${formatCOP(total(cart))}`
     ].join("\n");
 
-    return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/${telefono}?text=${encodeURIComponent(message)}`;
   }
 
   function ensureUI() {
