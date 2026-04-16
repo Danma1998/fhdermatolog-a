@@ -130,7 +130,7 @@
 
     if (!cart.length) {
       items.innerHTML = `<p class="cart-empty">Aun no tienes productos en el carrito.</p>`;
-      wppButton.href = "inventario.html";
+      wppButton.href = "productos.html";
       wppButton.textContent = "Ir a inventario";
       return;
     }

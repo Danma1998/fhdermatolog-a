@@ -16,6 +16,11 @@ const clearCartBtn = document.getElementById("clearCartBtn");
 const sendCartBtn = document.getElementById("sendCartBtn");
 const FALLBACK_IMAGE = "https://via.placeholder.com/600x600?text=Sin+imagen";
 
+function getInitialCategoryFromUrl() {
+  const category = new URLSearchParams(window.location.search).get("cat");
+  return category ? category.trim() : "all";
+}
+
 function formatCOP(value) {
   return new Intl.NumberFormat("es-CO", {
     style: "currency",
@@ -288,6 +293,11 @@ async function loadProductsFromSheets() {
       .filter((item) => item.qty > 0);
 
     saveCart();
+    const urlCategory = getInitialCategoryFromUrl();
+    if (urlCategory !== "all" && PRODUCTS.some((p) => p.category === urlCategory)) {
+      activeCategory = urlCategory;
+    }
+
     renderCategoryChips();
     applyFilters();
     renderCart();

@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const telefono = "573001234567"; // Reemplazar por el número real.
-  const mensajeBase = "Hola, quiero agendar una cita en FH Dermatología.";
+﻿document.addEventListener("DOMContentLoaded", () => {
+  const telefono = "573001234567"; // Reemplazar por el numero real.
+  const mensajeBase = "Hola, quiero agendar una cita en FH Dermatologia.";
   const enlace = `https://wa.me/${telefono}?text=${encodeURIComponent(mensajeBase)}`;
 
   const boton = document.createElement("a");
