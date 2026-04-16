@@ -705,3 +705,112 @@ footer h3 {
     align-items: flex-start;
   }
 }
+.main-nav {
+  display: flex;
+  justify-content: center; /* mantiene todo centrado */
+  align-items: center;
+  gap: 18px;
+}
+
+/* separa Productos un poco hacia la derecha, sin mandarlo al extremo */
+.main-nav .nav-dropdown {
+  margin-left: 28px; /* prueba entre 20px y 40px */
+}
+/* Base responsive */
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header/Nav */
+.top-brand {
+  padding: 10px 12px;
+}
+
+.brand-img {
+  width: min(300px, 88vw);
+  height: auto;
+}
+
+/* Hero */
+.home-hero-pro {
+  padding: clamp(2.2rem, 8vw, 6rem) 1rem 2.5rem;
+}
+
+.home-hero-pro h1 {
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  line-height: 1.15;
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 3.4vw, 1.05rem);
+}
+
+/* Botones del banner */
+.hero-cta-row,
+.hero-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-cta-row .btn,
+.hero-shortcuts .btn {
+  flex: 1 1 180px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .main-nav {
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 12px;
+    flex-wrap: wrap;
+  }
+
+  .main-nav a,
+  .nav-dropdown-toggle {
+    font-size: 0.95rem;
+  }
+
+  .main-nav .nav-dropdown {
+    margin-left: 0;
+  }
+
+  .nav-dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: min(92vw, 280px);
+  }
+
+  .page-section {
+    padding: 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .product-actions {
+    flex-direction: column;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .global-cart-btn,
+  .whatsapp-float {
+    right: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .global-cart-btn { bottom: 76px; }
+  .whatsapp-float { bottom: 16px; }
+}

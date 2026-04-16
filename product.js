@@ -193,6 +193,7 @@ function addToCart(productId) {
 }
 
 function changeQty(productId, action) {
+  loadCart();
   const item = cart.find((p) => p.id === productId);
   if (!item) return;
 
@@ -205,6 +206,7 @@ function changeQty(productId, action) {
 }
 
 function removeFromCart(productId) {
+  loadCart();
   cart = cart.filter((p) => p.id !== productId);
   saveCart();
   renderCart();
