@@ -2,7 +2,7 @@ let PRODUCTS = [];
 let activeCategory = "all";
 let cart = [];
 
-const telefono = FH_CONFIG.phone;
+const PHONE = FH_CONFIG.phone;
 const CART_STORAGE_KEY = "fh_dermatologia_cart";
 const SHEETS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkLd9bWeFIt1JkN3kOHpFZTguCJJN34JBJTfKcd0cN1lysSs8ZhSvUym-McXYDc9qAxq7YukamoOTv/pub?gid=1701849434&single=true&output=csv";
 
@@ -70,7 +70,7 @@ function sanitizeImageUrl(value) {
 
 function singleProductWhatsappLink(product) {
   const msg = `Hola, quiero informacion de ${product.name} por ${formatCOP(product.price)}.`;
-  return `https://wa.me/${telefono}?text=${encodeURIComponent(msg)}`;
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 }
 
 function productCard(product) {
@@ -230,7 +230,7 @@ function sendCartToWhatsApp() {
     `Total: ${formatCOP(cartTotal())}`
   ].join("\n");
 
-  const link = `https://wa.me/${telefono}?text=${encodeURIComponent(message)}`;
+  const link = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
   window.open(link, "_blank", "noopener,noreferrer");
 }
 

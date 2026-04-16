@@ -1,6 +1,6 @@
 (() => {
   const CART_STORAGE_KEY = "fh_dermatologia_cart";
-  const telefono = FH_CONFIG.phone;
+  const PHONE = FH_CONFIG.phone;
 
   function formatCOP(value) {
     return new Intl.NumberFormat("es-CO", {
@@ -47,7 +47,7 @@
       `Total: ${formatCOP(total(cart))}`
     ].join("\n");
 
-    return `https://wa.me/${telefono}?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
   }
 
   function ensureUI() {
