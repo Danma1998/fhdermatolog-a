@@ -1,6 +1,6 @@
 (() => {
   const CART_STORAGE_KEY = "fh_dermatologia_cart";
-  const PHONE = "573001234567";
+  const telefono = FH_CONFIG.phone;
 
   function formatCOP(value) {
     return new Intl.NumberFormat("es-CO", {
@@ -124,6 +124,7 @@
     const items = document.getElementById("drawerItems");
     const totalLabel = document.getElementById("drawerTotal");
     const wppButton = document.getElementById("drawerWppBtn");
+    button.style.display = cart.length ? "block" : "none";
 
     button.textContent = cart.length ? `Carrito: ${formatCOP(total(cart))}` : "Carrito vacio";
     totalLabel.textContent = `Total: ${formatCOP(total(cart))}`;

@@ -2,7 +2,7 @@ let PRODUCTS = [];
 let activeCategory = "all";
 let cart = [];
 
-const PHONE = "573001234567";
+const telefono = FH_CONFIG.phone;
 const CART_STORAGE_KEY = "fh_dermatologia_cart";
 const SHEETS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkLd9bWeFIt1JkN3kOHpFZTguCJJN34JBJTfKcd0cN1lysSs8ZhSvUym-McXYDc9qAxq7YukamoOTv/pub?gid=1701849434&single=true&output=csv";
 
@@ -235,7 +235,7 @@ function sendCartToWhatsApp() {
 }
 
 function applyFilters() {
-  const q = searchInput.value.toLowerCase().trim();
+  const q = searchInput.value.toLowerCase().trim().replace(/\s+/g, " ");
   const sort = sortSelect.value;
 
   let items = [...PRODUCTS];
@@ -292,7 +292,7 @@ async function loadProductsFromSheets() {
         const product = PRODUCTS.find((p) => p.id === item.id);
         return { ...item, stock: product.stock, qty: Math.min(item.qty, product.stock) };
       })
-      .filter((item) => item.qty > 0);
+      .filter((p, index, arr) => p.id && arr.findIndex(x => x.id === p.id) === index)
 
     saveCart();
     const urlCategory = getInitialCategoryFromUrl();
