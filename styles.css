@@ -652,9 +652,17 @@ footer h3 {
     flex-wrap: wrap;
   }
 
-  .whatsapp-float { bottom: 16px; right: 12px; padding: 14px 20px; font-size: 15px; 
+  .whatsapp-float { 
+    bottom: 16px; 
+    right: 12px; 
+    padding: 14px 20px; 
+    font-size: 15px; 
   }
-  .global-cart-btn { bottom: 80px; right: 12px; padding: 14px 20px; font-size: 15px; 
+  .global-cart-btn { 
+    bottom: 80px; 
+    right: 12px; 
+    padding: 14px 20px; 
+    font-size: 15px; 
   }
 
   .nav-toggle {
